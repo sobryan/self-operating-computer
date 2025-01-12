@@ -150,7 +150,27 @@ Start `operate` with the SoM model
 operate -m gpt-4-with-som
 ```
 
+## Using the API
 
+The application now includes an API using Python Flask that accepts user input in JSON format and returns a unique work ID to check the status of the task.
+
+### Submitting a Task
+
+To submit a task, make a POST request to the `/submit_task` endpoint with the user input in JSON format. The response will include a unique work ID.
+
+Example:
+```sh
+curl -X POST http://127.0.0.1:5000/submit_task -H "Content-Type: application/json" -d '{"input": "your_input_here"}'
+```
+
+### Checking Task Status
+
+To check the status of a task, make a GET request to the `/check_status/<task_id>` endpoint with the unique work ID. The response will include the status of the task.
+
+Example:
+```sh
+curl -X GET http://127.0.0.1:5000/check_status/<task_id>
+```
 
 ## Contributions are Welcomed!:
 

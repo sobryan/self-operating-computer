@@ -4,6 +4,9 @@ from setuptools import setup, find_packages
 with open("requirements.txt") as f:
     required = f.read().splitlines()
 
+# Add Flask to the install_requires list
+required.append("Flask")
+
 # Read the contents of your README.md file for the project description
 with open("README.md", "r", encoding="utf-8") as readme_file:
     long_description = readme_file.read()
